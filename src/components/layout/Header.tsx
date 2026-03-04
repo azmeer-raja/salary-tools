@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { ChevronDown, Menu, X, Calculator, BookOpen, Sun, Moon, Briefcase, GraduationCap, Code } from "lucide-react";
+import { ChevronDown, Menu, X, Calculator, BookOpen, Sun, Moon, Briefcase, GraduationCap, Code, Image as ImageIcon, FileText, Search, Hash } from "lucide-react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
@@ -31,6 +31,10 @@ const menuCategories = [
             { name: "Salary Hike", href: "/salary-hike-calculator" },
             { name: "Notice Period", href: "/career-tools/notice-period-calculator" },
             { name: "Hourly Rate", href: "/career-tools/hourly-rate-calculator" },
+            { name: "Annual Salary", href: "/career-tools/annual-salary-calculator" },
+            { name: "Freelancer Income", href: "/career-tools/freelancer-income-calculator" },
+            { name: "Cost of Living", href: "/career-tools/cost-of-living-calculator" },
+            { name: "Promotion Estimator", href: "/career-tools/promotion-salary-estimator" },
             { name: "BMI Calculator", href: "/bmi-calculator" },
             { name: "Calorie Calculator", href: "/calorie-calculator" },
             { name: "BMR Calculator", href: "/bmr-calculator" },
@@ -39,7 +43,7 @@ const menuCategories = [
         ]
     },
     {
-        title: "Utility & Education",
+        title: "Utility",
         icon: <GraduationCap size={16} />,
         items: [
             { name: "GPA Calculator", href: "/gpa-calculator" },
@@ -48,13 +52,12 @@ const menuCategories = [
             { name: "Age Calculator", href: "/age-calculator" },
             { name: "Date Calculator", href: "/date-calculator" },
             { name: "Random Number", href: "/random-number-generator" },
-            { name: "Keyword Density", href: "/keyword-density-checker" },
             { name: "Password Generator", href: "/password-generator" },
             { name: "Love Calculator", href: "/love-calculator" },
         ]
     },
     {
-        title: "Developer Tools",
+        title: "Dev Tools",
         icon: <Code size={16} />,
         items: [
             { name: "JSON Formatter", href: "/json-formatter" },
@@ -64,23 +67,60 @@ const menuCategories = [
     },
     {
         title: "Image Tools",
-        icon: <Calculator size={16} />,
+        icon: <ImageIcon size={16} />,
         items: [
-            { name: "Image Compressor", href: "/image-compressor" },
-            { name: "Image Resizer", href: "/image-resizer" },
-            { name: "Image Crop Tool", href: "/image-crop-tool" },
-            { name: "Image Color Picker", href: "/image-color-picker" },
+            { name: "Compressor", href: "/image-compressor" },
+            { name: "Resizer", href: "/image-resizer" },
+            { name: "Crop Tool", href: "/image-crop-tool" },
+            { name: "To Base64", href: "/image-to-base64" },
+            { name: "JPG to PNG", href: "/jpg-to-png" },
+            { name: "PNG to JPG", href: "/png-to-jpg" },
+            { name: "WebP Convert", href: "/webp-converter" },
+            { name: "Blur Image", href: "/blur-image-tool" },
+            { name: "Watermark", href: "/add-watermark-to-image" },
+            { name: "Color Picker", href: "/image-color-picker" },
         ]
     },
     {
         title: "PDF Tools",
-        icon: <Calculator size={16} />,
+        icon: <FileText size={16} />,
         items: [
             { name: "Merge PDF", href: "/merge-pdf" },
             { name: "Split PDF", href: "/split-pdf" },
             { name: "Compress PDF", href: "/compress-pdf" },
             { name: "PDF to JPG", href: "/pdf-to-jpg" },
             { name: "JPG to PDF", href: "/jpg-to-pdf" },
+            { name: "PDF to Word", href: "/pdf-to-word" },
+            { name: "Rotate PDF", href: "/rotate-pdf" },
+            { name: "Watermark", href: "/add-watermark-to-pdf" },
+            { name: "Unlock PDF", href: "/unlock-pdf" },
+            { name: "Protect PDF", href: "/protect-pdf" },
+        ]
+    },
+    {
+        title: "SEO Tools",
+        icon: <Search size={16} />,
+        items: [
+            { name: "Keyword Density", href: "/keyword-density-checker" },
+            { name: "Meta Tags", href: "/meta-tag-generator" },
+            { name: "Word Counter", href: "/word-counter" },
+            { name: "Plagiarism", href: "/text-compare" },
+            { name: "Sitemap Gen", href: "/sitemap-generator" },
+            { name: "Robots.txt", href: "/robots-txt-generator" },
+            { name: "Open Graph", href: "/open-graph-generator" },
+            { name: "SERP Preview", href: "/serp-preview-tool" },
+        ]
+    },
+    {
+        title: "Social Tools",
+        icon: <Hash size={16} />,
+        items: [
+            { name: "IG Captions", href: "/instagram-caption-generator" },
+            { name: "Hashtags", href: "/hashtag-generator" },
+            { name: "YT Titles", href: "/youtube-title-generator" },
+            { name: "YT Tags", href: "/youtube-tag-generator" },
+            { name: "TikTok Tags", href: "/tiktok-hashtag-generator" },
+            { name: "Twitter Bio", href: "/twitter-bio-generator" },
         ]
     }
 ];
