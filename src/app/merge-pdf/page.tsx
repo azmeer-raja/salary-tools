@@ -47,7 +47,7 @@ export default function MergePDF() {
         if (!mergedUrl) return;
         const a = document.createElement("a");
         a.href = mergedUrl;
-        a.download = `merged-calcyraja-${new Date().getTime()}.pdf`;
+        a.download = `merged-toolzverse-${new Date().getTime()}.pdf`;
         a.click();
     };
 

@@ -15,7 +15,7 @@ export default function BlogPost() {
         "description": "Discover the most lucrative career paths in India for 2024.",
         "author": {
             "@type": "Person",
-            "name": "CalcyRaja Team"
+            "name": "Toolzverse Team"
         },
         "datePublished": "2024-03-04"
     };
@@ -25,7 +25,7 @@ export default function BlogPost() {
             title="Top 10 High Paying Jobs in India for 2024"
             description="Exploring the most rewarding career opportunities in the Indian job market."
             publishDate="March 4, 2024"
-            author="CalcyRaja Team"
+            author="Toolzverse Team"
             readTime="10 min"
         >
             <Script

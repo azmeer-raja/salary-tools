@@ -101,7 +101,7 @@ export default function PDFToWord() {
                                         <h3 className="text-xs font-black uppercase tracking-widest text-muted-foreground">Extraction</h3>
                                     </div>
                                     <p className="text-xs text-muted-foreground leading-relaxed px-1">
-                                        CalcyRaja will scan all {pageCount} pages and extract text strings while maintaining basic sequence.
+                                        Toolzverse will scan all {pageCount} pages and extract text strings while maintaining basic sequence.
                                     </p>
                                     <button
                                         onClick={handleExtract}

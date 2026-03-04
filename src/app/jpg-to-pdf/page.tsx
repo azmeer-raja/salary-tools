@@ -73,7 +73,7 @@ export default function JPGToPDF() {
         if (!pdfUrl) return;
         const a = document.createElement("a");
         a.href = pdfUrl;
-        a.download = `converted-images-calcyraja.pdf`;
+        a.download = `converted-images-toolzverse.pdf`;
         a.click();
     };
 

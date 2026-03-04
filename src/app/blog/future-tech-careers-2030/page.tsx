@@ -12,7 +12,7 @@ export default function BlogPost() {
             title="Future Tech Careers 2030: What Skills Will Matter?"
             description="The technology of tomorrow is being built today. Are you ready for the shift?"
             publishDate="February 10, 2024"
-            author="CalcyRaja Team"
+            author="Toolzverse Team"
             readTime="11 min"
         >
             <p>By 2030, the tech landscape will look vastly different than it does today. While core engineering skills will still be relevant, the emphasis will shift toward human-AI collaboration, quantum computing, and ethical technology governance.</p>

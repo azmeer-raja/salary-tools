@@ -12,7 +12,7 @@ export default function BlogPost() {
             title="Best Career Paths After Computer Science in 2024"
             description="You have the degree. Now choose the right path for your personality and goals."
             publishDate="February 15, 2024"
-            author="CalcyRaja Team"
+            author="Toolzverse Team"
             readTime="9 min"
         >
             <p>A degree in Computer Science is a golden ticket in today's economy. However, many graduates mistakenly believe that 'Software Engineer' is the only viable path. The truth is that CS skills are applicable across a vast array of high-paying roles.</p>

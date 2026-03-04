@@ -109,7 +109,7 @@ export default function OpenGraphGenerator() {
                                     type="text"
                                     value={siteName}
                                     onChange={setSiteName}
-                                    placeholder="e.g. CalcyRaja"
+                                    placeholder="e.g. Toolzverse"
                                 />
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">OG Type</label>

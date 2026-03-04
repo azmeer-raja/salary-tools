@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://calcyraja.com/sitemap.xml',
+        sitemap: 'https://toolzverse.com/sitemap.xml',
     };
 }

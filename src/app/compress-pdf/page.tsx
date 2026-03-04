@@ -87,7 +87,7 @@ export default function CompressPDF() {
                                         <h3 className="text-xs font-black uppercase tracking-widest text-muted-foreground">Optimization</h3>
                                     </div>
                                     <p className="text-xs text-muted-foreground leading-relaxed px-1">
-                                        CalcyRaja uses advanced re-encoding to strip unnecessary metadata and optimize structure.
+                                        Toolzverse uses advanced re-encoding to strip unnecessary metadata and optimize structure.
                                     </p>
                                     <button
                                         onClick={handleCompress}

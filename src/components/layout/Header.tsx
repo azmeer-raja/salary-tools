@@ -141,7 +141,7 @@ export default function Header() {
                         C
                     </motion.div>
                     <span className="text-2xl font-black tracking-tighter transition-colors group-hover:text-primary">
-                        CalcyRaja
+                        Toolzverse
                     </span>
                 </Link>
 

@@ -71,7 +71,7 @@ export default function MetaTagGenerator() {
                                     type="text"
                                     value={title}
                                     onChange={setTitle}
-                                    placeholder="e.g. CalcyRaja - Free Online Calculators"
+                                    placeholder="e.g. Toolzverse - Free Online Calculators"
                                 />
                                 <span className={cn(
                                     "absolute top-0 right-1 text-[10px] font-black uppercase tracking-widest mt-2",

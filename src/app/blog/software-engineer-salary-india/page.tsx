@@ -12,7 +12,7 @@ export default function BlogPost() {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Software Engineer Salary in India: The 2024 Guide",
-        "author": { "@type": "Person", "name": "CalcyRaja Team" },
+        "author": { "@type": "Person", "name": "Toolzverse Team" },
         "datePublished": "2024-02-28"
     };
 
@@ -21,7 +21,7 @@ export default function BlogPost() {
             title="Software Engineer Salary in India: The 2024 Guide"
             description="Everything you need to know about developer compensation in the world's fastest-growing tech hub."
             publishDate="February 28, 2024"
-            author="CalcyRaja Team"
+            author="Toolzverse Team"
             readTime="12 min"
         >
             <Script

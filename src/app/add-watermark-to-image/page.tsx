@@ -14,7 +14,7 @@ export default function AddWatermark() {
     const [watermarkedUrl, setWatermarkedUrl] = useState<string | null>(null);
     const [isProcessing, setIsProcessing] = useState(false);
 
-    const [text, setText] = useState("CalcyRaja");
+    const [text, setText] = useState("Toolzverse");
     const [fontSize, setFontSize] = useState(48);
     const [opacity, setOpacity] = useState(0.5);
     const [position, setPosition] = useState<"center" | "bottom-right" | "top-left" | "top-right" | "bottom-left">("bottom-right");
@@ -232,7 +232,7 @@ export default function AddWatermark() {
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <ResultCard
                                         label="Watermark Text"
-                                        value={text || "CalcyRaja"}
+                                        value={text || "Toolzverse"}
                                         variant="default"
                                     />
                                     <ResultCard

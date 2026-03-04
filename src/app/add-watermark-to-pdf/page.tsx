@@ -14,7 +14,7 @@ export default function AddWatermarkPDF() {
     const [watermarkedUrl, setWatermarkedUrl] = useState<string | null>(null);
     const [isProcessing, setIsProcessing] = useState(false);
 
-    const [text, setText] = useState("CalcyRaja");
+    const [text, setText] = useState("Toolzverse");
     const [fontSize, setFontSize] = useState(50);
     const [opacity, setOpacity] = useState(0.4);
     const [rotation, setRotation] = useState(-45);

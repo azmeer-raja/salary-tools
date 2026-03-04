@@ -16,7 +16,7 @@ export default function Footer() {
                             <div className="w-10 h-10 rounded-xl premium-gradient flex items-center justify-center text-white font-black shadow-lg shadow-primary/20">
                                 C
                             </div>
-                            <span className="text-2xl font-black tracking-tighter">CalcyRaja</span>
+                            <span className="text-2xl font-black tracking-tighter">Toolzverse</span>
                         </Link>
                         <p className="text-muted-foreground max-w-sm leading-relaxed font-medium">
                             Providing precision financial intelligence for modern professionals.
@@ -63,7 +63,7 @@ export default function Footer() {
 
                 <div className="mt-20 pt-10 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-6">
                     <p className="text-sm font-medium text-muted-foreground/60">
-                        © {new Date().getFullYear()} CalcyRaja. Designed for the futuristic professional.
+                        © {new Date().getFullYear()} Toolzverse. Designed for the futuristic professional.
                     </p>
                     <div className="flex items-center gap-2">
                         <div className="flex -space-x-2">
