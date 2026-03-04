@@ -136,9 +136,9 @@ export default function Header() {
                 <Link href="/" className="flex items-center space-x-3 group">
                     <motion.div
                         whileHover={{ rotate: 10, scale: 1.1 }}
-                        className="w-10 h-10 rounded-xl premium-gradient flex items-center justify-center text-white font-black shadow-lg shadow-primary/20"
+                        className="w-10 h-10 rounded-xl bg-white/10 dark:bg-white/5 flex items-center justify-center shadow-lg shadow-primary/20 overflow-hidden"
                     >
-                        C
+                        <img src="/favicon.ico" alt="Toolzverse Logo" className="w-8 h-8 object-contain" />
                     </motion.div>
                     <span className="text-2xl font-black tracking-tighter transition-colors group-hover:text-primary">
                         Toolzverse

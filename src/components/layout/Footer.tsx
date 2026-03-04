@@ -13,8 +13,8 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
                     <div className="lg:col-span-2 space-y-8">
                         <Link href="/" className="flex items-center space-x-3 group w-fit">
-                            <div className="w-10 h-10 rounded-xl premium-gradient flex items-center justify-center text-white font-black shadow-lg shadow-primary/20">
-                                C
+                            <div className="w-10 h-10 rounded-xl bg-white/10 dark:bg-white/5 flex items-center justify-center shadow-lg shadow-primary/20 overflow-hidden">
+                                <img src="/favicon.ico" alt="Toolzverse Logo" className="w-8 h-8 object-contain" />
                             </div>
                             <span className="text-2xl font-black tracking-tighter">Toolzverse</span>
                         </Link>
