@@ -12,7 +12,7 @@ export default function BlogPost() {
             title="How to Negotiate Your Salary as a Professional"
             description="Don't leave money on the table. Master the art of the salary conversation."
             publishDate="February 20, 2024"
-            author="SalaryTools Team"
+            author="CalcyRaja Team"
             readTime="8 min"
         >
             <p>Negotiating your salary is often the most stressful part of the job search process. However, it's also the most critical. A successful negotiation can add thousands to your annual income, which compounds significantly over your career.</p>

@@ -10,22 +10,22 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: {
-    default: "SalaryTools | Modern Financial & Career Calculators",
-    template: "%s | SalaryTools"
+    default: "CalcyRaja | Modern Financial & Career Calculators",
+    template: "%s | CalcyRaja"
   },
   description: "Accurate salary calculators, income tax estimators, and career tools for India. Calculate in-hand salary, PF, HRA, EMI and more.",
   keywords: ["salary calculator", "income tax calculator", "PF calculator", "HRA exemption", "EMI calculator India", "career tools"],
-  authors: [{ name: "SalaryTools Team" }],
+  authors: [{ name: "CalcyRaja Team" }],
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://salarytools.in",
-    siteName: "SalaryTools",
+    url: "https://calcyraja.com",
+    siteName: "CalcyRaja",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SalaryTools | Modern Financial & Career Calculators",
+    title: "CalcyRaja | Modern Financial & Career Calculators",
     description: "Accurate salary calculators and career tools for professionals.",
   },
   robots: "index, follow",

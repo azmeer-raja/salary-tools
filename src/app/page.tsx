@@ -282,7 +282,7 @@ export default function Home() {
           </div>
           <div className="prose dark:prose-invert max-w-none text-muted-foreground font-medium text-lg leading-relaxed space-y-8">
             <p>
-              In today's fast-paced economy, making the right financial and career decisions requires accurate data. Whether you're a software engineer calculating your **In-Hand Salary** in Bangalore or a freelancer estimating global income, SalaryTools provides a single source of truth.
+              In today's fast-paced economy, making the right financial and career decisions requires accurate data. Whether you're a software engineer calculating your **In-Hand Salary** in Bangalore or a freelancer estimating global income, CalcyRaja provides a single source of truth.
             </p>
             <p>
               Our ecosystem handles complex taxation logic (Old vs New Regime), investment growth (Power of SIP), and healthy living (BMI & Hydration) with zero data tracking. Every calculation happens on your device, ensuring total privacy.

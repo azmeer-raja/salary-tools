@@ -76,10 +76,10 @@ export default function Header() {
                         whileHover={{ rotate: 10, scale: 1.1 }}
                         className="w-10 h-10 rounded-xl premium-gradient flex items-center justify-center text-white font-black shadow-lg shadow-primary/20"
                     >
-                        S
+                        C
                     </motion.div>
                     <span className="text-2xl font-black tracking-tighter transition-colors group-hover:text-primary">
-                        SalaryTools
+                        CalcyRaja
                     </span>
                 </Link>
 

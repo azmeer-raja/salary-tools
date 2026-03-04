@@ -71,7 +71,7 @@ const TreeItem = ({ name, value, depth = 0 }: { name: string; value: any; depth?
 };
 
 export default function JSONFormatter() {
-    const [input, setInput] = useState('{\n  "name": "SalaryTools",\n  "version": 1.0,\n  "status": "ready",\n  "features": [\n    "Calculators",\n    "Blog",\n    "Developer Tools"\n  ]\n}');
+    const [input, setInput] = useState('{\n  "name": "CalcyRaja",\n  "version": 1.0,\n  "status": "ready",\n  "features": [\n    "Calculators",\n    "Blog",\n    "Developer Tools"\n  ]\n}');
     const [output, setOutput] = useState("");
     const [parsedData, setParsedData] = useState<any>(null);
     const [viewMode, setViewMode] = useState<'code' | 'tree'>('code');
@@ -151,7 +151,7 @@ export default function JSONFormatter() {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `salarytools-${new Date().getTime()}.json`;
+        a.download = `calcyraja-${new Date().getTime()}.json`;
         a.click();
         triggerToast("File Download Started");
     };
