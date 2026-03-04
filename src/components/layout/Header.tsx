@@ -60,6 +60,27 @@ const menuCategories = [
             { name: "UUID Generator", href: "/uuid-generator" },
             { name: "Unix Timestamp", href: "/timestamp-converter" },
         ]
+    },
+    {
+        title: "Image Tools",
+        icon: <Calculator size={16} />,
+        items: [
+            { name: "Image Compressor", href: "/image-compressor" },
+            { name: "Image Resizer", href: "/image-resizer" },
+            { name: "Image Crop Tool", href: "/image-crop-tool" },
+            { name: "Image Color Picker", href: "/image-color-picker" },
+        ]
+    },
+    {
+        title: "PDF Tools",
+        icon: <Calculator size={16} />,
+        items: [
+            { name: "Merge PDF", href: "/merge-pdf" },
+            { name: "Split PDF", href: "/split-pdf" },
+            { name: "Compress PDF", href: "/compress-pdf" },
+            { name: "PDF to JPG", href: "/pdf-to-jpg" },
+            { name: "JPG to PDF", href: "/jpg-to-pdf" },
+        ]
     }
 ];
 

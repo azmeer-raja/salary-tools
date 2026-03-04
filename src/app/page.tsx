@@ -4,7 +4,7 @@ import Link from "next/link";
 import {
   Calculator, Briefcase, TrendingUp, ShieldCheck, Zap,
   BarChart3, ChevronRight, Heart, Activity, Code, GraduationCap,
-  Banknote, Target, ArrowRight, Star, Sparkles, Plus
+  Banknote, Target, ArrowRight, Star, Sparkles, Plus, Image as ImageIcon, FileText
 } from "lucide-react";
 import AdSlot from "@/components/ads/AdSlot";
 import { cn } from "@/lib/utils";
@@ -55,6 +55,30 @@ const toolCategories = [
       { name: "Password Gen", href: "/password-generator", desc: "Secure random credentials." },
       { name: "JSON Formatter", href: "/json-formatter", desc: "Clean and validate your data." },
       { name: "Timestamp", href: "/timestamp-converter", desc: "Unix to human-readable date." },
+    ]
+  },
+  {
+    title: "Image Tools",
+    icon: <ImageIcon className="text-emerald-500" />,
+    gradient: "from-emerald-500/20 to-teal-500/20",
+    items: [
+      { name: "Compressor", href: "/image-compressor", desc: "Reduce file size without losing quality." },
+      { name: "Resizer", href: "/image-resizer", desc: "Change dimensions with pixel precision." },
+      { name: "Crop Tool", href: "/image-crop-tool", desc: "Perfect framing for every shot." },
+      { name: "Color Picker", href: "/image-color-picker", desc: "Extract hex codes from images." },
+      { name: "Format Convert", href: "/webp-converter", desc: "JPG, PNG, WebP converters." },
+    ]
+  },
+  {
+    title: "PDF Tools",
+    icon: <FileText className="text-red-500" />,
+    gradient: "from-red-500/20 to-orange-500/20",
+    items: [
+      { name: "Merge PDF", href: "/merge-pdf", desc: "Combine multiple files into one." },
+      { name: "Split PDF", href: "/split-pdf", desc: "Extract specific pages easily." },
+      { name: "Compress PDF", href: "/compress-pdf", desc: "Optimize size for sharing." },
+      { name: "PDF to JPG", href: "/pdf-to-jpg", desc: "Convert pages to high-res images." },
+      { name: "Lock/Unlock", href: "/protect-pdf", desc: "Password protect your documents." },
     ]
   }
 ];

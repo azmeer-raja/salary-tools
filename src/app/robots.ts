@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://salarytools.in/sitemap.xml',
+        sitemap: 'https://calcyraja.com/sitemap.xml',
     };
 }
