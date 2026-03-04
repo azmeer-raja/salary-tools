@@ -62,7 +62,7 @@ export default function SplitPDF() {
                 copiedPages.forEach(p => newPdf.addPage(p));
 
                 const pdfBytes = await newPdf.save();
-                const blob = new Blob([pdfBytes], { type: "application/pdf" });
+                const blob = new Blob([pdfBytes as unknown as BlobPart], { type: "application/pdf" });
                 newSplitUrls.push({
                     name: `Part ${i + 1} (Pages ${start}-${end})`,
                     url: URL.createObjectURL(blob)

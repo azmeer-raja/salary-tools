@@ -51,7 +51,7 @@ export default function ProtectPDF() {
             // For now, I'll implement the UI and a "Save with Security" placeholder 
             // while I look for a better solution or just provide the save.
             const pdfBytes = await pdfDoc.save();
-            const blob = new Blob([pdfBytes as any], { type: "application/pdf" });
+            const blob = new Blob([pdfBytes as unknown as BlobPart], { type: "application/pdf" });
             setProtectedUrl(URL.createObjectURL(blob));
 
         } catch (error) {

@@ -4,63 +4,77 @@ import { useState } from "react";
 import { ToolLayout } from "@/components/ui/ToolLayout";
 import { FileUploader } from "@/components/ui/FileUploader";
 import { ResultCard } from "@/components/ui/CalculatorUI";
-import { Download, RefreshCw, Minimize, Check, Info, FileText } from "lucide-react";
+import { Download, RefreshCw, Check, Info, FileText, FileCode } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { PDFDocument } from "pdf-lib";
+import * as pdfjsLib from "pdfjs-dist";
 import { cn } from "@/lib/utils";
 
-export default function CompressPDF() {
-    const [file, setFile] = useState<File | null>(null);
-    const [compressedUrl, setCompressedUrl] = useState<string | null>(null);
-    const [compressedSize, setCompressedSize] = useState<number>(0);
-    const [isProcessing, setIsProcessing] = useState(false);
+// Initialize PDF.js worker
+pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
 
-    const handleFileSelect = (files: File[]) => {
+export default function PDFToWord() {
+    const [file, setFile] = useState<File | null>(null);
+    const [extractedText, setExtractedText] = useState<string>("");
+    const [isProcessing, setIsProcessing] = useState(false);
+    const [pageCount, setPageCount] = useState(0);
+
+    const handleFileSelect = async (files: File[]) => {
         if (files[0]) {
             setFile(files[0]);
-            setCompressedUrl(null);
+            setExtractedText("");
+            const arrayBuffer = await files[0].arrayBuffer();
+            const loadingTask = pdfjsLib.getDocument(arrayBuffer);
+            const pdf = await loadingTask.promise;
+            setPageCount(pdf.numPages);
         } else {
             setFile(null);
-            setCompressedUrl(null);
+            setPageCount(0);
+            setExtractedText("");
         }
     };
 
-    const handleCompress = async () => {
+    const handleExtract = async () => {
         if (!file) return;
 
         setIsProcessing(true);
         try {
             const arrayBuffer = await file.arrayBuffer();
-            const pdfDoc = await PDFDocument.load(arrayBuffer);
+            const loadingTask = pdfjsLib.getDocument(arrayBuffer);
+            const pdf = await loadingTask.promise;
 
-            // Re-saving with useObjectStreams: true can sometimes reduce size
-            const pdfBytes = await pdfDoc.save({
-                useObjectStreams: true,
-                addDefaultPage: false,
-            });
+            let fullText = "";
 
-            const blob = new Blob([pdfBytes as unknown as BlobPart], { type: "application/pdf" });
-            setCompressedUrl(URL.createObjectURL(blob));
-            setCompressedSize(blob.size);
+            for (let i = 1; i <= pdf.numPages; i++) {
+                const page = await pdf.getPage(i);
+                const textContent = await page.getTextContent();
+                const pageText = textContent.items.map((item: any) => item.str).join(" ");
+                fullText += `--- Page ${i} ---\n\n${pageText}\n\n`;
+            }
+
+            setExtractedText(fullText);
         } catch (error) {
-            console.error("PDF compression failed:", error);
+            console.error("Text extraction failed:", error);
         } finally {
             setIsProcessing(false);
         }
     };
 
     const handleDownload = () => {
-        if (!compressedUrl) return;
+        if (!extractedText) return;
+        // Simple .docx trick: Word can open text files with .doc extension
+        // or we can use a basic HTML structure that Word understands.
+        const content = `<html><body>${extractedText.replace(/\n/g, '<br>')}</body></html>`;
+        const blob = new Blob([content], { type: "application/msword" });
         const a = document.createElement("a");
-        a.href = compressedUrl;
-        a.download = `compressed-${file?.name}`;
+        a.href = URL.createObjectURL(blob);
+        a.download = `${file?.name.split('.')[0] || "extracted"}.doc`;
         a.click();
     };
 
     return (
         <ToolLayout
-            title="Compress PDF"
-            description="Optimize PDF file size for faster sharing and storage. All processing happens in your browser."
+            title="PDF to Word (Text)"
+            description="Extract all text content from your PDF documents into an editable Word-compatible format. Fast and safe extraction."
             category="PDF Tools"
             categoryHref="/pdf-tools"
         >
@@ -70,7 +84,7 @@ export default function CompressPDF() {
                     <FileUploader
                         onFileSelect={handleFileSelect}
                         accept="application/pdf"
-                        label="Upload PDF to compress"
+                        label="Upload PDF to extract text"
                     />
 
                     <AnimatePresence>
@@ -83,21 +97,21 @@ export default function CompressPDF() {
                             >
                                 <div className="space-y-6 glass p-6 rounded-3xl border-dashed border-primary/20">
                                     <div className="flex items-center gap-2 mb-2">
-                                        <Minimize className="w-4 h-4 text-primary" />
-                                        <h3 className="text-xs font-black uppercase tracking-widest text-muted-foreground">Optimization</h3>
+                                        <FileCode className="w-4 h-4 text-primary" />
+                                        <h3 className="text-xs font-black uppercase tracking-widest text-muted-foreground">Extraction</h3>
                                     </div>
                                     <p className="text-xs text-muted-foreground leading-relaxed px-1">
-                                        CalcyRaja uses advanced re-encoding to strip unnecessary metadata and optimize structure.
+                                        CalcyRaja will scan all {pageCount} pages and extract text strings while maintaining basic sequence.
                                     </p>
                                     <button
-                                        onClick={handleCompress}
+                                        onClick={handleExtract}
                                         disabled={isProcessing}
                                         className={cn(
                                             "w-full h-14 rounded-2xl premium-gradient text-white font-black uppercase tracking-widest flex items-center justify-center gap-3 transition-all hover:shadow-2xl hover:shadow-primary/20 mt-4",
                                             isProcessing && "opacity-70 cursor-not-allowed"
                                         )}
                                     >
-                                        {isProcessing ? <RefreshCw className="animate-spin" /> : "Compress Now"}
+                                        {isProcessing ? <RefreshCw className="animate-spin" /> : "Extract Text to Word"}
                                     </button>
                                 </div>
                             </motion.div>
@@ -105,7 +119,7 @@ export default function CompressPDF() {
                     </AnimatePresence>
                 </div>
 
-                {/* Right Side: Results */}
+                {/* Right Side: Preview & Results */}
                 <div className="lg:col-span-12 xl:col-span-7 space-y-6">
                     <AnimatePresence mode="wait">
                         {!file ? (
@@ -119,9 +133,9 @@ export default function CompressPDF() {
                                     <FileText className="w-12 h-12 text-primary/20" />
                                 </div>
                                 <div className="space-y-2">
-                                    <h3 className="text-lg font-bold opacity-40 uppercase tracking-widest">Awaiting PDF</h3>
+                                    <h3 className="text-lg font-bold opacity-40 uppercase tracking-widest">Awaiting Extraction</h3>
                                     <p className="text-sm text-muted-foreground max-w-xs mx-auto italic">
-                                        Upload a PDF to see the potential size reduction.
+                                        Convert your read-only PDFs into editable text documents.
                                     </p>
                                 </div>
                             </motion.div>
@@ -130,23 +144,33 @@ export default function CompressPDF() {
                                 key="results"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="space-y-8"
+                                className="space-y-6"
                             >
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <ResultCard
-                                        label="Original Size"
-                                        value={(file.size / 1024 / 1024).toFixed(2) + " MB"}
-                                        variant="default"
-                                    />
-                                    <ResultCard
-                                        label="Compressed Size"
-                                        value={compressedUrl ? (compressedSize / 1024 / 1024).toFixed(2) + " MB" : "---"}
-                                        variant={compressedUrl ? "primary" : "default"}
-                                        description={compressedUrl ? `${Math.round(((file.size - compressedSize) / file.size) * 100)}% Reduction` : undefined}
-                                    />
+                                    <ResultCard label="Pages Found" value={pageCount.toString()} variant="default" />
+                                    <ResultCard label="Output Format" value=".DOC (Word)" variant={extractedText ? "primary" : "default"} />
                                 </div>
 
-                                {compressedUrl && (
+                                <div className="space-y-4">
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground px-2">Extraction Preview</p>
+                                    <div className="glass p-6 rounded-[2rem] border-primary/10 overflow-hidden h-[300px] relative">
+                                        {extractedText ? (
+                                            <div className="h-full overflow-y-auto pr-4 scrollbar-custom">
+                                                <pre className="text-xs font-medium whitespace-pre-wrap leading-relaxed opacity-60">
+                                                    {extractedText}
+                                                </pre>
+                                            </div>
+                                        ) : (
+                                            <div className="w-full h-full flex flex-col items-center justify-center text-muted-foreground gap-4">
+                                                <Info className="animate-pulse w-8 h-8 opacity-20" />
+                                                <p className="text-[10px] font-black uppercase tracking-widest">Ready to scan document</p>
+                                            </div>
+                                        )}
+                                        {extractedText && <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent pointer-events-none" />}
+                                    </div>
+                                </div>
+
+                                {extractedText && (
                                     <motion.div
                                         initial={{ opacity: 0, scale: 0.95 }}
                                         animate={{ opacity: 1, scale: 1 }}
@@ -155,9 +179,9 @@ export default function CompressPDF() {
                                         <div className="space-y-1 text-center md:text-left">
                                             <div className="flex items-center gap-2 justify-center md:justify-start">
                                                 <Check className="w-4 h-4" />
-                                                <h3 className="text-xs font-black uppercase tracking-widest">Optimization Successful</h3>
+                                                <h3 className="text-xs font-black uppercase tracking-widest">Extraction Complete</h3>
                                             </div>
-                                            <p className="text-xl font-bold tracking-tight">Your compressed PDF is ready!</p>
+                                            <p className="text-xl font-bold tracking-tight">Your Word document is ready!</p>
                                         </div>
                                         <button
                                             onClick={handleDownload}

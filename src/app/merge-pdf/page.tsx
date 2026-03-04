@@ -34,7 +34,7 @@ export default function MergePDF() {
             }
 
             const pdfBytes = await mergedPdf.save();
-            const blob = new Blob([pdfBytes], { type: "application/pdf" });
+            const blob = new Blob([pdfBytes as unknown as BlobPart], { type: "application/pdf" });
             setMergedUrl(URL.createObjectURL(blob));
         } catch (error) {
             console.error("PDF Merge failed:", error);

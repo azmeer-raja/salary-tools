@@ -44,7 +44,7 @@ export default function UnlockPDF() {
 
             // If it succeeds, re-save it without encryption
             const pdfBytes = await pdfDoc.save();
-            const blob = new Blob([pdfBytes as any], { type: "application/pdf" });
+            const blob = new Blob([pdfBytes as unknown as BlobPart], { type: "application/pdf" });
             setUnlockedUrl(URL.createObjectURL(blob));
         } catch (err: any) {
             console.error("PDF unlock failed:", err);
