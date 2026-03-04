@@ -24,7 +24,7 @@ export default function AdSlot({ slot, format = "auto", className = "", responsi
             <ins
                 className="adsbygoogle"
                 style={{ display: "block" }}
-                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" // Placeholder
+                data-ad-client="ca-pub-1213830257600237"
                 data-ad-slot={slot}
                 data-ad-format={format}
                 data-full-width-responsive={responsive}
