@@ -48,6 +48,7 @@ const menuCategories = [
             { name: "Age Calculator", href: "/age-calculator" },
             { name: "Date Calculator", href: "/date-calculator" },
             { name: "Random Number", href: "/random-number-generator" },
+            { name: "Keyword Density", href: "/keyword-density-checker" },
             { name: "Password Generator", href: "/password-generator" },
             { name: "Love Calculator", href: "/love-calculator" },
         ]

@@ -10,7 +10,7 @@ interface ToolLayoutProps {
     title: string;
     description: string;
     children: ReactNode;
-    category?: "Image Tools" | "PDF Tools" | "Developer Tools";
+    category?: "Image Tools" | "PDF Tools" | "Developer Tools" | "SEO Tools" | "Social Media Tools" | string;
     categoryHref?: string;
 }
 

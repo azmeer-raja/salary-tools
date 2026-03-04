@@ -46,7 +46,7 @@ export function calculateInHandSalary(
   // > 15L: 30%
   // Standard Deduction: 75k (New)
 
-  let taxableIncome = annualFixed - (regime === 'new' ? 75000 : 50000);
+  const taxableIncome = annualFixed - (regime === 'new' ? 75000 : 50000);
   let annualTax = 0;
 
   if (regime === 'new') {

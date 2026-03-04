@@ -4,7 +4,8 @@ import Link from "next/link";
 import {
   Calculator, Briefcase, TrendingUp, ShieldCheck, Zap,
   BarChart3, ChevronRight, Heart, Activity, Code, GraduationCap,
-  Banknote, Target, ArrowRight, Star, Sparkles, Plus, Image as ImageIcon, FileText
+  Banknote, Target, ArrowRight, Star, Sparkles, Plus, Image as ImageIcon, FileText,
+  Search, Share2, Youtube, UserCircle, Hash, Instagram, Twitter, TextSelect, SplitSquareHorizontal, Globe, Layout, KeyRound, Unlock
 } from "lucide-react";
 import AdSlot from "@/components/ads/AdSlot";
 import { cn } from "@/lib/utils";
@@ -79,6 +80,34 @@ const toolCategories = [
       { name: "Compress PDF", href: "/compress-pdf", desc: "Optimize size for sharing." },
       { name: "PDF to JPG", href: "/pdf-to-jpg", desc: "Convert pages to high-res images." },
       { name: "Lock/Unlock", href: "/protect-pdf", desc: "Password protect your documents." },
+    ]
+  },
+  {
+    title: "SEO Tools",
+    icon: <Search className="text-blue-500" />,
+    gradient: "from-blue-500/20 to-cyan-500/20",
+    items: [
+      { name: "Keyword Density", href: "/keyword-density-checker", desc: "Check text keyword density." },
+      { name: "Meta Tag Generator", href: "/meta-tag-generator", desc: "Generate HTML meta tags." },
+      { name: "Word Counter", href: "/word-counter", desc: "Count words, chars & reading time." },
+      { name: "Plagiarism Checker", href: "/text-compare", desc: "Compare text similarities." },
+      { name: "Sitemap Generator", href: "/sitemap-generator", desc: "Create XML sitemaps." },
+      { name: "Robots.txt Generator", href: "/robots-txt-generator", desc: "Generate rules for crawlers." },
+      { name: "Open Graph Generator", href: "/open-graph-generator", desc: "Generate OG tags for social." },
+      { name: "SERP Preview Tool", href: "/serp-preview-tool", desc: "Simulate Google search results." },
+    ]
+  },
+  {
+    title: "Social Media Tools",
+    icon: <Hash className="text-pink-500" />,
+    gradient: "from-pink-500/20 to-rose-500/20",
+    items: [
+      { name: "Instagram Captions", href: "/instagram-caption-generator", desc: "AI caption ideas for IG." },
+      { name: "Hashtag Generator", href: "/hashtag-generator", desc: "Trending tags for your niche." },
+      { name: "YouTube Titles", href: "/youtube-title-generator", desc: "Catchy titles for videos." },
+      { name: "YouTube Tags", href: "/youtube-tag-generator", desc: "SEO tags for YouTube." },
+      { name: "TikTok Hashtags", href: "/tiktok-hashtag-generator", desc: "Viral tags for the FYP." },
+      { name: "Twitter Bio Generator", href: "/twitter-bio-generator", desc: "Professional X (Twitter) bios." },
     ]
   }
 ];
@@ -244,10 +273,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Featured Viral Tools (Glass Bento) */}
-      <section className="py-32 px-4 relative overflow-hidden">
+      < section className="py-32 px-4 relative overflow-hidden" >
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             <motion.div
@@ -295,10 +324,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* SEO Narrative Section */}
-      <section className="py-24 px-4">
+      < section className="py-24 px-4" >
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black font-display tracking-tight mb-4 leading-tight">Empowering Professionals with <br /> Precision Tools.</h2>
@@ -323,7 +352,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 }

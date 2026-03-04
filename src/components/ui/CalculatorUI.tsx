@@ -12,9 +12,10 @@ interface InputFieldProps {
     suffix?: string;
     className?: string;
     step?: string;
+    placeholder?: string;
 }
 
-export function InputField({ label, id, type = "number", value, onChange, prefix, suffix, className, step }: InputFieldProps) {
+export function InputField({ label, id, type = "number", value, onChange, prefix, suffix, className, step, placeholder }: InputFieldProps) {
     return (
         <div className={cn("space-y-2.5", className)}>
             <label htmlFor={id} className="text-xs font-black uppercase tracking-widest text-muted-foreground/80 ml-1">
@@ -32,8 +33,9 @@ export function InputField({ label, id, type = "number", value, onChange, prefix
                     value={value}
                     onChange={(e) => onChange(e.target.value)}
                     step={step}
+                    placeholder={placeholder}
                     className={cn(
-                        "w-full h-14 rounded-2xl border bg-card/50 px-4 py-2 outline-none focus:border-primary focus:ring-8 focus:ring-primary/5 transition-all duration-300 text-lg font-bold placeholder:text-muted-foreground/30",
+                        "w-full h-14 rounded-2xl border bg-card/50 px-4 py-2 outline-none focus:border-primary focus:ring-8 focus:ring-primary/5 transition-all duration-300 text-lg font-bold placeholder:text-muted-foreground/30 text-foreground",
                         prefix && "pl-11",
                         suffix && "pr-11"
                     )}
