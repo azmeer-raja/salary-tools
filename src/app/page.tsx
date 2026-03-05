@@ -347,57 +347,87 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Categories Modern Grid */}
-      <section className="py-24 px-4 bg-secondary/20 relative">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-            <div className="max-w-xl">
-              <h2 className="text-4xl md:text-5xl font-black font-display tracking-tight mb-4">Precision Toolbox</h2>
-              <p className="text-muted-foreground text-lg font-medium opacity-70">A comprehensive suite of 50+ specialized tools designed for high-performance decision making.</p>
-            </div>
-            <div className="flex gap-3">
-              <div className="px-5 py-3 rounded-2xl glass font-black text-xs uppercase tracking-widest text-primary border-primary/10">52 Verified Tools</div>
-            </div>
+      {/* Modern SaaS Categories Grid */}
+      <section id="categories" className="relative py-24 md:py-32 w-full bg-gradient-to-br from-purple-900/5 via-violet-900/5 to-pink-900/5 dark:from-purple-950/40 dark:via-violet-950/20 dark:to-pink-950/20 overflow-hidden">
+        {/* Soft Radial Highlights & Floating Blur Shapes */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="container mx-auto max-w-[1200px] px-4 relative z-10">
+          <div className="flex flex-col items-center text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[20px] bg-white/40 dark:bg-white/5 backdrop-blur-md border border-black/5 dark:border-white/10 text-sm font-semibold text-purple-700 dark:text-purple-300 mb-6 shadow-sm"
+            >
+              <Sparkles size={14} className="text-purple-600 dark:text-purple-400" /> Discover by Category
+            </motion.div>
+
+            <h2 className="text-4xl md:text-5xl font-black font-display tracking-tight mb-4 text-foreground">
+              Browse AI Tools by Category
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Explore our curated collection of enterprise-grade calculators, utilities, and productivity tools designed for modern professionals.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {toolCategories.map((cat, idx) => (
               <motion.div
                 key={cat.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="space-y-8"
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
               >
-                <div className="flex items-center gap-4">
-                  <div className={cn("p-4 rounded-2xl bg-gradient-to-br border shadow-sm", cat.gradient)}>
-                    {cat.icon}
-                  </div>
-                  <h3 className="font-black tracking-tight text-2xl font-display">{cat.title}</h3>
-                </div>
-                <div className="space-y-4">
-                  {cat.items.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="group flex flex-col p-6 rounded-3xl glass border-transparent hover:border-primary/20 hover:scale-[1.02] shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300"
-                    >
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="font-black text-sm group-hover:text-primary transition-colors">{item.name}</span>
-                        <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0">
-                          <Plus size={14} />
+                <Link
+                  href={cat.items[0].href}
+                  className="group relative flex flex-col h-full p-6 bg-white/40 dark:bg-purple-950/20 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] hover:shadow-xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/20 hover:border-purple-500/30 dark:hover:border-purple-400/30 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                >
+                  {/* Subtle Gradient Hover Shift */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 via-transparent to-pink-500/0 group-hover:from-purple-500/5 group-hover:to-pink-500/5 transition-colors duration-500 pointer-events-none" />
+
+                  <div className="relative z-10">
+                    <div className="flex justify-between items-start mb-5">
+                      <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br shadow-sm [&>svg]:!text-white", cat.gradient.replace(/\/20/g, ''))}>
+                        <div className="scale-110 drop-shadow-sm">
+                          {cat.icon}
                         </div>
                       </div>
-                      <span className="text-xs text-muted-foreground font-medium leading-relaxed opacity-60 leading-tight">{item.desc}</span>
-                    </Link>
-                  ))}
-                </div>
+                      <span className="inline-flex items-center px-2.5 py-1 rounded-md bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs font-bold">
+                        {cat.items.length} tools
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                      {cat.title}
+                    </h3>
+
+                    <p className="text-sm text-muted-foreground line-clamp-2 mb-6 min-h-[40px]">
+                      {cat.title === "Finance & Tax" ? "Precision calculators for salary, tax, and financial planning." :
+                        cat.title === "Career & Work" ? "Tools to accelerate your professional growth and career strategy." :
+                          cat.title === "Health & Fitness" ? "Monitor your wellness metrics with professional-grade calculators." :
+                            cat.title === "Utility & Tech" ? "Essential digital utilities for developers and technical tasks." :
+                              cat.title === "Image Tools" ? "Optimize, resize, and transform your visual assets with ease." :
+                                cat.title === "PDF Tools" ? "Professional-grade PDF management and transformation suite." :
+                                  cat.title === "SEO Tools" ? "Optimized utilities for search engine ranking and visibility." :
+                                    "AI-powered tools for content creation and social optimization."}
+                    </p>
+
+                    <div className="mt-auto flex items-center justify-between pt-4 border-t border-black/5 dark:border-white/5">
+                      <span className="text-sm font-semibold text-muted-foreground group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                        Explore
+                      </span>
+                      <ArrowRight size={18} className="text-muted-foreground/50 group-hover:text-purple-600 dark:group-hover:text-purple-400 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                    </div>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>
         </div>
-      </section >
+      </section>
 
       {/* Featured Viral Tools (Glass Bento) */}
       < section className="py-32 px-4 relative overflow-hidden" >
