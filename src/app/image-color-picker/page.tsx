@@ -193,7 +193,7 @@ export default function ImageColorPicker() {
                                 <div className="flex items-center justify-between px-2">
                                     <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Click to pick color</p>
                                     {!isEyeDropperSupported && (
-                                        <div className="flex items-center gap-2 text-[10px] text-orange-500 font-bold uppercase tracking-widest">
+                                        <div className="flex items-center gap-2 text-[10px] text-teal-500 font-bold uppercase tracking-widest">
                                             <Info size={12} /> Canvas picking mode
                                         </div>
                                     )}

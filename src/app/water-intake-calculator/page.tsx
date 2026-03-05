@@ -23,7 +23,7 @@ export default function WaterIntakeCalculator() {
         <CalculatorLayout
             title="Water Intake Calculator"
             description="Stay hydrated. Calculate how much water you should drink daily based on your weight and activity levels."
-            icon={<Droplet className="text-blue-500" />}
+            icon={<Droplet className="text-lime-500" />}
         >
             <div className="space-y-6">
                 <InputField
@@ -43,9 +43,9 @@ export default function WaterIntakeCalculator() {
             </div>
 
             <div className="space-y-6">
-                <div className="bg-blue-500/5 rounded-3xl p-8 border border-blue-500/10 text-center">
-                    <p className="text-sm font-bold text-blue-500 mb-1 uppercase tracking-wider">Recommended Daily Intake</p>
-                    <p className="text-5xl md:text-6xl font-black text-blue-600 dark:text-blue-400">
+                <div className="bg-lime-500/5 rounded-3xl p-8 border border-lime-500/10 text-center">
+                    <p className="text-sm font-bold text-lime-500 mb-1 uppercase tracking-wider">Recommended Daily Intake</p>
+                    <p className="text-5xl md:text-6xl font-black text-lime-600 dark:text-lime-400">
                         {liters} Liters
                     </p>
                     <p className="mt-2 text-lg font-bold text-muted-foreground italic">
@@ -57,12 +57,12 @@ export default function WaterIntakeCalculator() {
                     <ResultCard
                         label="Base Hydration"
                         value={`${(weight * 0.033).toFixed(1)} L`}
-                        icon={<GlassWater size={16} className="text-blue-500" />}
+                        icon={<GlassWater size={16} className="text-lime-500" />}
                     />
                     <ResultCard
                         label="Activity Bonus"
                         value={`${((activity / 30) * 0.35).toFixed(1)} L`}
-                        icon={<Zap size={16} className="text-orange-500" />}
+                        icon={<Zap size={16} className="text-teal-500" />}
                         variant="primary"
                     />
                 </div>

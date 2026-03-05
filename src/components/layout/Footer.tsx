@@ -9,7 +9,7 @@ export default function Footer() {
         <footer className="w-full border-t border-white/5 bg-secondary/5 relative overflow-hidden mt-32">
             {/* Immersive Background Glows */}
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -z-10 animate-pulse" />
-            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px] -z-10" />
+            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-green-500/5 rounded-full blur-[100px] -z-10" />
 
             <div className="container mx-auto px-6 py-24">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 lg:gap-12">
@@ -91,7 +91,7 @@ export default function Footer() {
                         <div className="flex -space-x-3 items-center">
                             {[1, 2, 3, 4].map((i) => (
                                 <div key={i} className="w-10 h-10 rounded-full border-4 border-background bg-secondary/50 glass shadow-xl flex items-center justify-center overflow-hidden">
-                                    <div className={`w-full h-full bg-gradient-to-br ${i % 2 === 0 ? 'from-primary/20 to-purple-500/20' : 'from-emerald-500/20 to-cyan-500/20'}`} />
+                                    <div className={`w-full h-full bg-gradient-to-br ${i % 2 === 0 ? 'from-primary/20 to-green-500/20' : 'from-emerald-500/20 to-emerald-500/20'}`} />
                                 </div>
                             ))}
                         </div>

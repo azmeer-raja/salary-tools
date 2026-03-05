@@ -15,8 +15,8 @@ import { motion, AnimatePresence } from "framer-motion";
 const toolCategories = [
   {
     title: "Finance & Tax",
-    icon: <Calculator className="text-blue-500" />,
-    gradient: "from-blue-500/20 to-cyan-500/20",
+    icon: <Calculator className="text-lime-500" />,
+    gradient: "from-lime-500/20 to-emerald-500/20",
     items: [
       { name: "In-Hand Salary", href: "/in-hand-salary-calculator", desc: "Precise net take-home pay breakdown." },
       { name: "Income Tax", href: "/income-tax-calculator", desc: "Compare tax regimes in seconds." },
@@ -28,8 +28,8 @@ const toolCategories = [
   },
   {
     title: "Career & Work",
-    icon: <Briefcase className="text-orange-500" />,
-    gradient: "from-orange-500/20 to-amber-500/20",
+    icon: <Briefcase className="text-teal-500" />,
+    gradient: "from-teal-500/20 to-emerald-500/20",
     items: [
       { name: "Salary Hike", href: "/salary-hike-calculator", desc: "Estimate your next appraisal." },
       { name: "Notice Period", href: "/career-tools/notice-period-calculator", desc: "Calculate your last working day." },
@@ -39,8 +39,8 @@ const toolCategories = [
   },
   {
     title: "Health & Fitness",
-    icon: <Heart className="text-pink-500" />,
-    gradient: "from-pink-500/20 to-rose-500/20",
+    icon: <Heart className="text-teal-500" />,
+    gradient: "from-teal-500/20 to-lime-500/20",
     items: [
       { name: "BMI Calculator", href: "/bmi-calculator", desc: "Check your body mass index." },
       { name: "Calorie Calculator", href: "/calorie-calculator", desc: "Optimize your daily intake." },
@@ -50,8 +50,8 @@ const toolCategories = [
   },
   {
     title: "Utility & Tech",
-    icon: <Code className="text-purple-500" />,
-    gradient: "from-purple-500/20 to-indigo-500/20",
+    icon: <Code className="text-green-500" />,
+    gradient: "from-green-500/20 to-emerald-500/20",
     items: [
       { name: "GPA Calculator", href: "/gpa-calculator", desc: "Track your academic standing." },
       { name: "Password Gen", href: "/password-generator", desc: "Secure random credentials." },
@@ -73,8 +73,8 @@ const toolCategories = [
   },
   {
     title: "PDF Tools",
-    icon: <FileText className="text-red-500" />,
-    gradient: "from-red-500/20 to-orange-500/20",
+    icon: <FileText className="text-green-500" />,
+    gradient: "from-green-500/20 to-teal-500/20",
     items: [
       { name: "Merge PDF", href: "/merge-pdf", desc: "Combine multiple files into one." },
       { name: "Split PDF", href: "/split-pdf", desc: "Extract specific pages easily." },
@@ -85,8 +85,8 @@ const toolCategories = [
   },
   {
     title: "SEO Tools",
-    icon: <Search className="text-blue-500" />,
-    gradient: "from-blue-500/20 to-cyan-500/20",
+    icon: <Search className="text-lime-500" />,
+    gradient: "from-lime-500/20 to-emerald-500/20",
     items: [
       { name: "Keyword Density", href: "/keyword-density-checker", desc: "Check text keyword density." },
       { name: "Meta Tag Generator", href: "/meta-tag-generator", desc: "Generate HTML meta tags." },
@@ -100,8 +100,8 @@ const toolCategories = [
   },
   {
     title: "Social Media Tools",
-    icon: <Hash className="text-pink-500" />,
-    gradient: "from-pink-500/20 to-rose-500/20",
+    icon: <Hash className="text-teal-500" />,
+    gradient: "from-teal-500/20 to-lime-500/20",
     items: [
       { name: "Instagram Captions", href: "/instagram-caption-generator", desc: "AI caption ideas for IG." },
       { name: "Hashtag Generator", href: "/hashtag-generator", desc: "Trending tags for your niche." },
@@ -114,12 +114,12 @@ const toolCategories = [
 ];
 
 const heroCategories = [
-  { label: "Calculators", emoji: "📊", href: "/in-hand-salary-calculator", color: "from-blue-500/20 to-cyan-500/20 border-blue-500/20 hover:border-blue-500/40" },
+  { label: "Calculators", emoji: "📊", href: "/in-hand-salary-calculator", color: "from-lime-500/20 to-emerald-500/20 border-lime-500/20 hover:border-lime-500/40" },
   { label: "Image Tools", emoji: "🖼️", href: "/image-compressor", color: "from-emerald-500/20 to-teal-500/20 border-emerald-500/20 hover:border-emerald-500/40" },
-  { label: "PDF Tools", emoji: "📄", href: "/merge-pdf", color: "from-red-500/20 to-orange-500/20 border-red-500/20 hover:border-red-500/40" },
-  { label: "Dev Tools", emoji: "💻", href: "/json-formatter", color: "from-purple-500/20 to-indigo-500/20 border-purple-500/20 hover:border-purple-500/40" },
-  { label: "SEO Tools", emoji: "🔍", href: "/meta-tag-generator", color: "from-sky-500/20 to-blue-500/20 border-sky-500/20 hover:border-sky-500/40" },
-  { label: "Social Tools", emoji: "⚡", href: "/hashtag-generator", color: "from-pink-500/20 to-rose-500/20 border-pink-500/20 hover:border-pink-500/40" },
+  { label: "PDF Tools", emoji: "📄", href: "/merge-pdf", color: "from-green-500/20 to-teal-500/20 border-green-500/20 hover:border-green-500/40" },
+  { label: "Dev Tools", emoji: "💻", href: "/json-formatter", color: "from-green-500/20 to-emerald-500/20 border-green-500/20 hover:border-green-500/40" },
+  { label: "SEO Tools", emoji: "🔍", href: "/meta-tag-generator", color: "from-teal-500/20 to-lime-500/20 border-teal-500/20 hover:border-teal-500/40" },
+  { label: "Social Tools", emoji: "⚡", href: "/hashtag-generator", color: "from-teal-500/20 to-lime-500/20 border-teal-500/20 hover:border-teal-500/40" },
 ];
 
 const floatingCards = [
@@ -161,8 +161,8 @@ export default function Home() {
       {/* Dynamic Background Elements */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[140px] animate-pulse" />
-        <div className="absolute bottom-[-5%] right-[-5%] w-[35%] h-[35%] bg-blue-500/5 rounded-full blur-[100px]" />
-        <div className="absolute top-[40%] right-[10%] w-[25%] h-[25%] bg-purple-500/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-5%] right-[-5%] w-[35%] h-[35%] bg-lime-500/5 rounded-full blur-[100px]" />
+        <div className="absolute top-[40%] right-[10%] w-[25%] h-[25%] bg-green-500/5 rounded-full blur-[120px]" />
       </div>
 
       {/* ===== HERO SECTION ===== */}
@@ -188,7 +188,7 @@ export default function Home() {
             className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 leading-[0.92]"
           >
             One Universe.{" "}
-            <span className="bg-gradient-to-r from-blue-500 via-violet-500 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-lime-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
               Unlimited Tools.
             </span>
           </motion.h1>
@@ -348,10 +348,10 @@ export default function Home() {
       </div>
 
       {/* Modern SaaS Categories Grid */}
-      <section id="categories" className="relative py-24 md:py-32 w-full bg-gradient-to-br from-purple-900/5 via-violet-900/5 to-pink-900/5 dark:from-purple-950/40 dark:via-violet-950/20 dark:to-pink-950/20 overflow-hidden">
+      <section id="categories" className="relative py-24 md:py-32 w-full bg-gradient-to-br from-green-900/5 via-emerald-900/5 to-teal-900/5 dark:from-green-950/40 dark:via-emerald-950/20 dark:to-teal-950/20 overflow-hidden">
         {/* Soft Radial Highlights & Floating Blur Shapes */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-green-500/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="container mx-auto max-w-[1200px] px-4 relative z-10">
           <div className="flex flex-col items-center text-center mb-16">
@@ -359,9 +359,9 @@ export default function Home() {
               initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[20px] bg-white/40 dark:bg-white/5 backdrop-blur-md border border-black/5 dark:border-white/10 text-sm font-semibold text-purple-700 dark:text-purple-300 mb-6 shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[20px] bg-white/40 dark:bg-white/5 backdrop-blur-md border border-black/5 dark:border-white/10 text-sm font-semibold text-green-700 dark:text-green-300 mb-6 shadow-sm"
             >
-              <Sparkles size={14} className="text-purple-600 dark:text-purple-400" /> Discover by Category
+              <Sparkles size={14} className="text-green-600 dark:text-green-400" /> Discover by Category
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl font-black font-display tracking-tight mb-4 text-foreground">
@@ -383,10 +383,10 @@ export default function Home() {
               >
                 <Link
                   href={cat.items[0].href}
-                  className="group relative flex flex-col h-full p-6 bg-white/40 dark:bg-purple-950/20 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] hover:shadow-xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/20 hover:border-purple-500/30 dark:hover:border-purple-400/30 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                  className="group relative flex flex-col h-full p-6 bg-white/40 dark:bg-green-950/20 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] hover:shadow-xl hover:shadow-green-500/10 dark:hover:shadow-green-500/20 hover:border-green-500/30 dark:hover:border-green-400/30 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                 >
                   {/* Subtle Gradient Hover Shift */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 via-transparent to-pink-500/0 group-hover:from-purple-500/5 group-hover:to-pink-500/5 transition-colors duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 via-transparent to-teal-500/0 group-hover:from-green-500/5 group-hover:to-teal-500/5 transition-colors duration-500 pointer-events-none" />
 
                   <div className="relative z-10">
                     <div className="flex justify-between items-start mb-5">
@@ -395,12 +395,12 @@ export default function Home() {
                           {cat.icon}
                         </div>
                       </div>
-                      <span className="inline-flex items-center px-2.5 py-1 rounded-md bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs font-bold">
+                      <span className="inline-flex items-center px-2.5 py-1 rounded-md bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-bold">
                         {cat.items.length} tools
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                    <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
                       {cat.title}
                     </h3>
 
@@ -416,10 +416,10 @@ export default function Home() {
                     </p>
 
                     <div className="mt-auto flex items-center justify-between pt-4 border-t border-black/5 dark:border-white/5">
-                      <span className="text-sm font-semibold text-muted-foreground group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                      <span className="text-sm font-semibold text-muted-foreground group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
                         Explore
                       </span>
-                      <ArrowRight size={18} className="text-muted-foreground/50 group-hover:text-purple-600 dark:group-hover:text-purple-400 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                      <ArrowRight size={18} className="text-muted-foreground/50 group-hover:text-green-600 dark:group-hover:text-green-400 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
                     </div>
                   </div>
                 </Link>
@@ -458,10 +458,10 @@ export default function Home() {
 
             <div className="lg:col-span-5 grid grid-cols-2 gap-6">
               {[
-                { name: "UUID Gen", href: "/uuid-generator", icon: <ShieldCheck size={20} />, color: "bg-blue-500/10" },
+                { name: "UUID Gen", href: "/uuid-generator", icon: <ShieldCheck size={20} />, color: "bg-lime-500/10" },
                 { name: "VAT/Tax", href: "/vat-calculator", icon: <Banknote size={20} />, color: "bg-green-500/10" },
-                { name: "JSON Format", href: "/json-formatter", icon: <Code size={20} />, color: "bg-purple-500/10" },
-                { name: "Date Diff", href: "/date-calculator", icon: <TrendingUp size={20} />, color: "bg-orange-500/10" },
+                { name: "JSON Format", href: "/json-formatter", icon: <Code size={20} />, color: "bg-green-500/10" },
+                { name: "Date Diff", href: "/date-calculator", icon: <TrendingUp size={20} />, color: "bg-teal-500/10" },
               ].map((tool, idx) => (
                 <motion.div
                   key={tool.name}

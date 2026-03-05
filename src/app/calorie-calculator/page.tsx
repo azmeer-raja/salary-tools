@@ -24,7 +24,7 @@ export default function CalorieCalculator() {
         <CalculatorLayout
             title="Calorie Calculator"
             description="Estimate how many calories you need daily based on your activity levels."
-            icon={<Flame className="text-orange-500" />}
+            icon={<Flame className="text-teal-500" />}
         >
             <div className="space-y-6">
                 <div className="grid grid-cols-2 gap-4">

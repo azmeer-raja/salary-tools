@@ -13,34 +13,34 @@
 :root {
   --background: oklch(0.98 0 0);
   --foreground: oklch(0.12 0 0);
-  --primary: oklch(0.55 0.28 260);
+  --primary: oklch(0.55 0.18 140);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.95 0.01 260);
-  --secondary-foreground: oklch(0.15 0.02 260);
-  --accent: oklch(0.55 0.28 260 / 0.1);
-  --muted: oklch(0.92 0.01 260);
-  --muted-foreground: oklch(0.45 0.02 260);
+  --secondary: oklch(0.95 0.01 140);
+  --secondary-foreground: oklch(0.15 0.02 140);
+  --accent: oklch(0.55 0.18 140 / 0.1);
+  --muted: oklch(0.92 0.01 140);
+  --muted-foreground: oklch(0.45 0.02 140);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.12 0 0);
-  --border: oklch(0.9 0.01 260);
-  --input: oklch(0.95 0.01 260);
+  --border: oklch(0.9 0.01 140);
+  --input: oklch(0.95 0.01 140);
   --radius: 1rem;
 }
 
 .dark {
-  --background: oklch(0.08 0.02 260);
-  --foreground: oklch(0.98 0.01 260);
-  --primary: oklch(0.7 0.22 260);
-  --primary-foreground: oklch(0.08 0.02 260);
-  --secondary: oklch(0.15 0.03 260);
-  --secondary-foreground: oklch(0.95 0.01 260);
-  --accent: oklch(0.7 0.22 260 / 0.15);
-  --muted: oklch(0.12 0.03 260);
-  --muted-foreground: oklch(0.65 0.02 260);
-  --card: oklch(0.1 0.03 260);
-  --card-foreground: oklch(0.98 0.01 260);
-  --border: oklch(0.18 0.04 260);
-  --input: oklch(0.12 0.03 260);
+  --background: oklch(0.08 0.02 140);
+  --foreground: oklch(0.98 0.01 140);
+  --primary: oklch(0.7 0.18 140);
+  --primary-foreground: oklch(0.08 0.02 140);
+  --secondary: oklch(0.15 0.03 140);
+  --secondary-foreground: oklch(0.95 0.01 140);
+  --accent: oklch(0.7 0.18 140 / 0.15);
+  --muted: oklch(0.12 0.03 140);
+  --muted-foreground: oklch(0.65 0.02 140);
+  --card: oklch(0.1 0.03 140);
+  --card-foreground: oklch(0.98 0.01 140);
+  --border: oklch(0.18 0.04 140);
+  --input: oklch(0.12 0.03 140);
 }
 
 @theme {
@@ -87,7 +87,7 @@ h4,
 }
 
 .dark .glass {
-  background: oklch(0.08 0.02 260 / 0.4);
+  background: oklch(0.08 0.02 140 / 0.4);
   backdrop-filter: blur(24px);
   border: 1px solid oklch(1 0 0 / 0.1);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
@@ -128,7 +128,7 @@ h4,
 }
 
 .premium-gradient {
-  background: linear-gradient(135deg, oklch(0.55 0.28 260) 0%, oklch(0.65 0.2 300) 100%);
+  background: linear-gradient(135deg, oklch(0.55 0.18 140) 0%, oklch(0.65 0.15 160) 100%);
 }
 
 .glow {

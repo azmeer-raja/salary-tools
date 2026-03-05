@@ -181,7 +181,7 @@ export default function OpenGraphGenerator() {
                         </div>
 
                         <div className="bg-[#0D1117] rounded-2xl p-6 overflow-x-auto border border-white/10 scrollbar-custom max-h-[300px]">
-                            <pre className="text-xs font-medium text-pink-400 font-mono leading-loose">
+                            <pre className="text-xs font-medium text-teal-400 font-mono leading-loose">
                                 {generateTags()}
                             </pre>
                         </div>

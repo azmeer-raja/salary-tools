@@ -117,7 +117,7 @@ export default function MergePDF() {
                                 >
                                     {isProcessing ? <RefreshCw className="animate-spin" /> : "Merge All Files"}
                                 </button>
-                                {files.length === 1 && <p className="text-center text-[10px] font-bold text-orange-500 uppercase tracking-widest italic">Add at least one more file to merge</p>}
+                                {files.length === 1 && <p className="text-center text-[10px] font-bold text-teal-500 uppercase tracking-widest italic">Add at least one more file to merge</p>}
                             </motion.div>
                         )}
                     </AnimatePresence>

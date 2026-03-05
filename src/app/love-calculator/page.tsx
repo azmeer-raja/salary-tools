@@ -34,14 +34,14 @@ export default function LoveCalculator() {
         <CalculatorLayout
             title="Love Calculator"
             description="Calculate the attraction and compatibility between two names instantly."
-            icon={<Heart className="text-pink-500" />}
+            icon={<Heart className="text-teal-500" />}
         >
             <div className="space-y-6">
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-muted-foreground ml-1">Your Name</label>
                     <input
                         type="text"
-                        className="w-full h-12 rounded-xl border bg-background px-4 font-bold outline-none focus:border-pink-500 transition-all"
+                        className="w-full h-12 rounded-xl border bg-background px-4 font-bold outline-none focus:border-teal-500 transition-all"
                         value={name1}
                         onChange={(e) => setName1(e.target.value)}
                         placeholder="Enter first name"
@@ -51,7 +51,7 @@ export default function LoveCalculator() {
                     <label className="text-sm font-semibold text-muted-foreground ml-1">Partner's Name</label>
                     <input
                         type="text"
-                        className="w-full h-12 rounded-xl border bg-background px-4 font-bold outline-none focus:border-pink-500 transition-all"
+                        className="w-full h-12 rounded-xl border bg-background px-4 font-bold outline-none focus:border-teal-500 transition-all"
                         value={name2}
                         onChange={(e) => setName2(e.target.value)}
                         placeholder="Enter second name"
@@ -60,7 +60,7 @@ export default function LoveCalculator() {
 
                 <button
                     onClick={calculateLove}
-                    className="w-full h-12 rounded-xl bg-pink-500 text-white font-bold hover:shadow-lg hover:shadow-pink-500/20 transition-all flex items-center justify-center gap-2"
+                    className="w-full h-12 rounded-xl bg-teal-500 text-white font-bold hover:shadow-lg hover:shadow-teal-500/20 transition-all flex items-center justify-center gap-2"
                 >
                     <Sparkles size={18} /> Calculate Compatibility
                 </button>
@@ -68,15 +68,15 @@ export default function LoveCalculator() {
 
             <div className="space-y-6">
                 {score !== null && (
-                    <div className="bg-pink-50 rounded-3xl p-8 border border-pink-100 text-center dark:bg-pink-950/20 dark:border-pink-900/30">
-                        <p className="text-sm font-bold text-pink-500 mb-1 uppercase tracking-wider">Compatibility Score</p>
-                        <p className="text-6xl md:text-7xl font-black text-pink-500 mb-4">
+                    <div className="bg-teal-50 rounded-3xl p-8 border border-teal-100 text-center dark:bg-teal-950/20 dark:border-teal-900/30">
+                        <p className="text-sm font-bold text-teal-500 mb-1 uppercase tracking-wider">Compatibility Score</p>
+                        <p className="text-6xl md:text-7xl font-black text-teal-500 mb-4">
                             {score}%
                         </p>
                         <div className="flex justify-center mb-4">
-                            <Heart size={48} className={`fill-pink-500 text-pink-500 ${score > 70 ? 'animate-bounce' : ''}`} />
+                            <Heart size={48} className={`fill-teal-500 text-teal-500 ${score > 70 ? 'animate-bounce' : ''}`} />
                         </div>
-                        <p className="text-xl font-bold text-pink-700 dark:text-pink-300">
+                        <p className="text-xl font-bold text-teal-700 dark:text-teal-300">
                             {getMessage(score)}
                         </p>
                     </div>

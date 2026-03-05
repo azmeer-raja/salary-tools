@@ -199,7 +199,7 @@ export default function RobotsTxtGenerator() {
                         </div>
 
                         <div className="flex-grow bg-[#0D1117] rounded-2xl p-6 overflow-auto border border-white/10 relative scrollbar-custom">
-                            <pre className="text-sm font-medium text-blue-400 font-mono leading-loose">
+                            <pre className="text-sm font-medium text-lime-400 font-mono leading-loose">
                                 {generateRobotsTxt()}
                             </pre>
                             {rules.length === 0 && !sitemap && (

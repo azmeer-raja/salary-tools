@@ -159,7 +159,7 @@ export default function SitemapGenerator() {
 
                         <div className="flex-grow bg-[#0D1117] rounded-2xl p-6 overflow-auto border border-white/10 relative scrollbar-custom">
                             {xmlOutput ? (
-                                <pre className="text-sm font-medium text-orange-400 font-mono leading-loose">
+                                <pre className="text-sm font-medium text-teal-400 font-mono leading-loose">
                                     {xmlOutput}
                                 </pre>
                             ) : (

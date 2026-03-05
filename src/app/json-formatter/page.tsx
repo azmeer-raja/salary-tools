@@ -18,8 +18,8 @@ const TreeItem = ({ name, value, depth = 0 }: { name: string; value: any; depth?
 
     const getTypeColor = (val: any) => {
         if (typeof val === 'string') return 'text-green-500';
-        if (typeof val === 'number') return 'text-blue-500';
-        if (typeof val === 'boolean') return 'text-orange-500';
+        if (typeof val === 'number') return 'text-lime-500';
+        if (typeof val === 'boolean') return 'text-teal-500';
         if (val === null) return 'text-zinc-500';
         return 'text-primary';
     };
@@ -350,7 +350,7 @@ export default function JSONFormatter() {
                 {[
                     { title: "Smart Sorter", text: "Automatically reorder keys alphabetically to help visualize structural differences.", icon: <SortAsc className="text-primary" /> },
                     { title: "Live Validation", text: "Instant syntax checking with descriptive error pointers and line numbers.", icon: <Check className="text-green-500" /> },
-                    { title: "Privacy First", text: "All processing happens locally. Your JSON data never leaves your browser sandbox.", icon: <ShieldCheck className="text-blue-500" /> }
+                    { title: "Privacy First", text: "All processing happens locally. Your JSON data never leaves your browser sandbox.", icon: <ShieldCheck className="text-lime-500" /> }
                 ].map((feature) => (
                     <div key={feature.title} className="p-8 rounded-[2rem] glass border shadow-sm group hover:border-primary/20 transition-all">
                         <div className="mb-4">{feature.icon}</div>
