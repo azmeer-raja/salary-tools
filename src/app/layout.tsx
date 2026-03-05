@@ -11,6 +11,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://toolzverse.com"),
   title: {
     default: "Toolzverse | Modern Financial & Career Calculators",
     template: "%s | Toolzverse"
@@ -31,6 +32,10 @@ export const metadata: Metadata = {
     description: "Accurate salary calculators and career tools for professionals.",
   },
   robots: "index, follow",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState } from "react";
 import Link from "next/link";
 import {
   Calculator, Briefcase, TrendingUp, ShieldCheck, Zap,
@@ -9,7 +10,7 @@ import {
 } from "lucide-react";
 import AdSlot from "@/components/ads/AdSlot";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const toolCategories = [
   {
@@ -112,106 +113,229 @@ const toolCategories = [
   }
 ];
 
+const heroCategories = [
+  { label: "Calculators", emoji: "📊", href: "/in-hand-salary-calculator", color: "from-blue-500/20 to-cyan-500/20 border-blue-500/20 hover:border-blue-500/40" },
+  { label: "Image Tools", emoji: "🖼️", href: "/image-compressor", color: "from-emerald-500/20 to-teal-500/20 border-emerald-500/20 hover:border-emerald-500/40" },
+  { label: "PDF Tools", emoji: "📄", href: "/merge-pdf", color: "from-red-500/20 to-orange-500/20 border-red-500/20 hover:border-red-500/40" },
+  { label: "Dev Tools", emoji: "💻", href: "/json-formatter", color: "from-purple-500/20 to-indigo-500/20 border-purple-500/20 hover:border-purple-500/40" },
+  { label: "SEO Tools", emoji: "🔍", href: "/meta-tag-generator", color: "from-sky-500/20 to-blue-500/20 border-sky-500/20 hover:border-sky-500/40" },
+  { label: "Social Tools", emoji: "⚡", href: "/hashtag-generator", color: "from-pink-500/20 to-rose-500/20 border-pink-500/20 hover:border-pink-500/40" },
+];
+
+const floatingCards = [
+  { name: "BMI Calculator", emoji: "📊", href: "/bmi-calculator", delay: 0 },
+  { name: "JSON Formatter", emoji: "💻", href: "/json-formatter", delay: 0.15 },
+  { name: "Merge PDF", emoji: "📄", href: "/merge-pdf", delay: 0.3 },
+  { name: "Image Compressor", emoji: "🖼️", href: "/image-compressor", delay: 0.45 },
+  { name: "Password Gen", emoji: "🔑", href: "/password-generator", delay: 0.6 },
+  { name: "EMI Calculator", emoji: "💰", href: "/emi-calculator", delay: 0.75 },
+  { name: "Word Counter", emoji: "📝", href: "/word-counter", delay: 0.9 },
+  { name: "UUID Generator", emoji: "🔐", href: "/uuid-generator", delay: 1.05 },
+];
+
+const trustIndicators = [
+  { icon: "⚡", label: "Blazing Fast" },
+  { icon: "🔒", label: "Privacy First" },
+  { icon: "🌍", label: "No Login Required" },
+  { icon: "📱", label: "Works on Any Device" },
+];
+
+const allSearchableTools = toolCategories.flatMap(cat =>
+  cat.items.map(item => ({ ...item, category: cat.title }))
+);
+
 export default function Home() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showResults, setShowResults] = useState(false);
+
+  const filteredTools = searchQuery.trim().length > 1
+    ? allSearchableTools.filter(t =>
+      t.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      t.desc.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      t.category.toLowerCase().includes(searchQuery.toLowerCase())
+    ).slice(0, 6)
+    : [];
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Dynamic Background Elements */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-[-5%] right-[-5%] w-[30%] h-[30%] bg-blue-500/5 rounded-full blur-[100px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[140px] animate-pulse" />
+        <div className="absolute bottom-[-5%] right-[-5%] w-[35%] h-[35%] bg-blue-500/5 rounded-full blur-[100px]" />
+        <div className="absolute top-[40%] right-[10%] w-[25%] h-[25%] bg-purple-500/5 rounded-full blur-[120px]" />
       </div>
 
-      {/* Hero Section */}
-      <section className="relative py-24 md:py-32 px-4">
-        <div className="container mx-auto max-w-6xl text-center">
+      {/* ===== HERO SECTION ===== */}
+      <section className="relative pt-20 pb-16 md:pt-28 md:pb-20 px-4 overflow-hidden">
+        <div className="container mx-auto max-w-5xl text-center">
+
+          {/* 1. Announcement Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/20 text-primary text-xs font-black mb-10 tracking-[0.2em] uppercase"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-black mb-10 tracking-[0.15em] uppercase shadow-sm"
           >
-            <Sparkles size={14} /> The Future of Utilities is Here
+            <Sparkles size={13} className="animate-pulse" />
+            🚀 150+ Powerful Tools — All in One Platform
           </motion.div>
 
+          {/* 2. Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.9] font-display"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 leading-[0.92]"
           >
-            Calculate with <br />
-            <span className="text-primary italic">Intelligence.</span>
+            One Universe.{" "}
+            <span className="bg-gradient-to-r from-blue-500 via-violet-500 to-purple-600 bg-clip-text text-transparent">
+              Unlimited Tools.
+            </span>
           </motion.h1>
 
+          {/* 3. Subheadline */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-12 font-medium tracking-tight leading-relaxed opacity-80"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-medium leading-relaxed"
           >
-            Professional-grade tools for finance, tax, health, and development.
-            Built for precision, speed, and absolute privacy.
+            ToolzVerse brings together calculators, converters, developer tools,
+            and productivity utilities — everything you need to calculate, convert,
+            generate, and build in one{" "}
+            <span className="text-foreground font-bold">fast, privacy-first</span> platform.
           </motion.p>
 
-          {/* Tool Carousel Section */}
-          <div className="relative w-full overflow-hidden py-10 mb-12">
-            <div className="flex flex-col gap-6">
-              {[0, 1].map((row) => (
-                <div key={row} className="flex gap-6 whitespace-nowrap animate-marquee group">
-                  <div className={cn("flex gap-6", row === 1 ? "animate-marquee-reverse" : "animate-marquee")}>
-                    {[...Array(2)].map((_, i) => (
-                      <div key={i} className="flex gap-6">
-                        {toolCategories[row].items.concat(toolCategories[row + 2]?.items || []).map((tool) => (
-                          <Link
-                            key={tool.name}
-                            href={tool.href}
-                            className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl glass border-primary/5 hover:border-primary/20 hover:bg-primary/5 transition-all group/tool shadow-sm"
-                          >
-                            <div className="w-8 h-8 rounded-lg bg-primary/5 flex items-center justify-center text-primary group-hover/tool:scale-110 transition-transform">
-                              <Target size={14} />
-                            </div>
-                            <span className="text-sm font-black tracking-tight">{tool.name}</span>
-                            <ArrowRight size={12} className="opacity-0 group-hover/tool:opacity-100 -translate-x-2 group-hover/tool:translate-x-0 transition-all text-primary" />
-                          </Link>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-            {/* Fade Gradients */}
-            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
-          </div>
-
+          {/* 4. CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-6"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-wrap justify-center gap-4 mb-12"
           >
             <Link
               href="/in-hand-salary-calculator"
-              className="h-16 px-10 rounded-2xl premium-gradient text-white font-black flex items-center gap-3 shadow-2xl shadow-primary/30 hover:-translate-y-1 transition-all"
+              className="h-14 px-9 rounded-2xl premium-gradient text-white font-black flex items-center gap-3 shadow-2xl shadow-primary/30 hover:-translate-y-1 hover:shadow-primary/50 transition-all text-sm"
             >
-              Start Calculating <ChevronRight size={20} />
+              Explore Tools <ChevronRight size={18} />
             </Link>
             <Link
-              href="/income-tax-calculator"
-              className="h-16 px-10 rounded-2xl glass font-bold flex items-center gap-3 hover:bg-secondary/50 transition-all border"
+              href="#categories"
+              className="h-14 px-9 rounded-2xl glass font-bold flex items-center gap-3 hover:bg-secondary/60 transition-all border text-sm"
             >
-              Tax Estimator
+              Browse Categories
             </Link>
           </motion.div>
 
+          {/* 5. Search Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="relative max-w-xl mx-auto mb-14"
+          >
+            <div className="relative flex items-center">
+              <Search size={18} className="absolute left-5 text-muted-foreground/60 pointer-events-none" />
+              <input
+                id="hero-search"
+                type="text"
+                placeholder="Search calculators, converters, PDF tools..."
+                value={searchQuery}
+                onChange={(e) => { setSearchQuery(e.target.value); setShowResults(true); }}
+                onFocus={() => setShowResults(true)}
+                onBlur={() => setTimeout(() => setShowResults(false), 150)}
+                className="w-full h-14 pl-12 pr-5 rounded-2xl glass border border-border/60 focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/10 text-sm font-medium placeholder:text-muted-foreground/50 transition-all bg-background/80 backdrop-blur-md shadow-lg"
+              />
+            </div>
+
+            <AnimatePresence>
+              {showResults && filteredTools.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 6 }}
+                  className="absolute top-full mt-2 w-full glass border rounded-2xl shadow-2xl z-50 overflow-hidden"
+                >
+                  {filteredTools.map((tool) => (
+                    <Link
+                      key={tool.href}
+                      href={tool.href}
+                      className="flex items-center justify-between px-5 py-3.5 hover:bg-primary/5 transition-colors border-b border-border/30 last:border-0 text-left"
+                    >
+                      <div>
+                        <p className="text-sm font-bold">{tool.name}</p>
+                        <p className="text-xs text-muted-foreground/70">{tool.category}</p>
+                      </div>
+                      <ArrowRight size={14} className="text-muted-foreground/40" />
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+
+          {/* 6. Category Shortcuts */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="flex flex-wrap justify-center gap-3 mb-16"
+          >
+            {heroCategories.map((cat) => (
+              <Link
+                key={cat.label}
+                href={cat.href}
+                className={cn(
+                  "flex items-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-br border text-sm font-bold transition-all hover:-translate-y-0.5 hover:shadow-lg",
+                  cat.color
+                )}
+              >
+                <span className="text-base">{cat.emoji}</span>
+                {cat.label}
+              </Link>
+            ))}
+          </motion.div>
+
+          {/* 7. Floating Tool Cards */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="mt-20 flex flex-wrap justify-center gap-10 opacity-40 grayscale pointer-events-none"
+            transition={{ delay: 0.6 }}
+            className="flex flex-wrap justify-center gap-3 mb-16"
           >
-            <div className="flex items-center gap-2 font-black text-sm uppercase tracking-widest"><Star size={16} /> Trusted by Professionals</div>
-            <div className="flex items-center gap-2 font-black text-sm uppercase tracking-widest"><ShieldCheck size={16} /> Privacy Guaranteed</div>
-            <div className="flex items-center gap-2 font-black text-sm uppercase tracking-widest"><Zap size={16} /> Real-time Processing</div>
+            {floatingCards.map((card) => (
+              <motion.div
+                key={card.name}
+                initial={{ opacity: 0, scale: 0.85, y: 12 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ delay: 0.6 + card.delay, type: "spring", stiffness: 200 }}
+                whileHover={{ y: -5, scale: 1.05 }}
+              >
+                <Link
+                  href={card.href}
+                  className="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-2xl glass border border-border/40 hover:border-primary/30 hover:bg-primary/5 shadow-sm hover:shadow-xl hover:shadow-primary/10 transition-all text-sm font-bold group"
+                >
+                  <span className="text-lg">{card.emoji}</span>
+                  {card.name}
+                  <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all text-primary" />
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* 8. Trust Indicators */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.0 }}
+            className="flex flex-wrap justify-center gap-8"
+          >
+            {trustIndicators.map((t) => (
+              <div key={t.label} className="flex items-center gap-2 text-muted-foreground/60 font-bold text-sm">
+                <span className="text-base">{t.icon}</span>
+                {t.label}
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>

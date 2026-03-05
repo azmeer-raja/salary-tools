@@ -14,7 +14,7 @@ export default function Footer() {
                     <div className="lg:col-span-2 space-y-8">
                         <Link href="/" className="flex items-center space-x-3 group w-fit">
                             <div className="w-10 h-10 rounded-xl bg-white/10 dark:bg-white/5 flex items-center justify-center shadow-lg shadow-primary/20 overflow-hidden">
-                                <img src="/favicon.ico" alt="Toolzverse Logo" className="w-8 h-8 object-contain" />
+                                <img src="/toolzverse.png" alt="Toolzverse Logo" className="w-10 h-10 object-contain" />
                             </div>
                             <span className="text-2xl font-black tracking-tighter">Toolzverse</span>
                         </Link>
